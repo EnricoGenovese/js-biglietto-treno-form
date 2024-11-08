@@ -15,7 +15,7 @@
 
 <body>
     <div class="container">
-        <form class="">
+        <form>
             <div class="form-group">
                 <label for="distance">Inserire i chilometri del tuo viaggio</label>
                 <input type="number" class="form-control" id="distance" placeholder="KM">
@@ -25,13 +25,18 @@
             <div class="form-group">
                 <label for="age">Inserire la facia di età del passeggero</label>
                 <select class="form-control" id="age" placeholder="Età del passeggero">
-                    <option id="junior">Junior (17 anni o meno)</option>
-                    <option id="standard">Adulto</option>
-                    <option id="senior">Senior (65 anni o più)</option>
-                  </select>
+                    <option value="17">Junior</option>
+                    <option value="standard">Adulto</option>
+                    <option value="65">Senior</option>
+                </select>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <input type="submit" value="Accetta" btn btn-primary"></input>
         </form>
+    </div>
+    <div class="container">
+        <p id="ticket">
+
+        </p>
     </div>
 
 

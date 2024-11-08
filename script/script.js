@@ -22,39 +22,38 @@ console.clear();
 
 // 1 - Programma che chiede distanza in chilometri ed età al passeggero
 
-// Variabili calcolo prezzo del biglietto 
 
-const pricePerKm = 0.21;
+const distance = document.getElementById("distance");
+const age = document.getElementById("age");
 
-const juniorDiscount = 20;  // percentage
-const maxJuniorAge = 17;    // max age; needs <=
+const ticket = document.getElementById("ticket");
 
-const seniorDiscount = 40;  // percentage
-const minSeniorAge = 65;    // min age; needs >=
+const form = document.querySelector("form");
 
-let ticketKm;
-let userAge;
-
-let ticketPrice = ticketKm * pricePerKm;
-
-// Calcolo del prezzo del biglietto
-
-// if (!isNaN(userAge) && !isNaN(ticketKm)) {
-//     if (userAge <= maxJuniorAge) {
-//         ticketPrice -= (ticketPrice * juniorDiscount) / 100;
-//         //
-//         console.log(`Applicazione sconto junior del ${juniorDiscount}%.`);
-//         console.log(`Il prezzo del tuo biglietto scontato è: ${ticketPrice.toFixed(2)}€.`);
-//         //
-//     } else if (userAge >= minSeniorAge) {
-//         ticketPrice -= (ticketPrice * seniorDiscount) / 100;
-//         //
-//         console.log(`Applicazione sconto senior del ${seniorDiscount}%.`);
-//         console.log(`Il prezzo del tuo biglietto scontato è: ${ticketPrice.toFixed(2)}€.`);
-//         //
-//     } else {
-//         console.log(`Il prezzo del tuo biglietto è: ${ticketPrice.toFixed(2)}€.`);
-//     }
-// } else {
-//     alert("Inserisci valori validi");
-// }
+form.addEventListener("submit", function(event) { 
+    event.preventDefault();
+    //
+    const pricePerKm = 0.21;
+    //
+    let ticketKm = parseInt(distance.value);
+    let ticketPrice = ticketKm * pricePerKm;
+    //
+    const maxJuniorAge = 17;  
+    const minSeniorAge = 65;
+    //
+    const juniorDiscount = 20;
+    const seniorDiscount = 40;
+    //
+    let userAge = parseInt(age.value);
+    //
+    if (!isNaN(userAge) && !isNaN(ticketKm)) {
+         if (userAge <= maxJuniorAge) {
+            ticketPrice -= (ticketPrice * juniorDiscount) / 100;
+        } else if (userAge >= minSeniorAge) {
+            ticketPrice -= (ticketPrice * seniorDiscount) / 100;
+        } else {
+            ticketPrice;
+        }  
+    }
+    ticket.innerHTML = ticketPrice.toFixed(2) + "€";
+})
