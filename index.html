@@ -9,46 +9,64 @@
         crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Interazioni DOM</title>
 </head>
 
 <body>
+    <!-- Form in cui il passeggero inserisce le proprie informazioni -->
     <div class="container">
-        <form>
-            <div class="form-group">
+        <form class="row">
+            <div class="col-md-6">
+                <label for="name">Nome del passeggero</label>
+                <input type="text" class="form-control" name="name" id="name">
+            </div>
+            <div class="col-md-6">
+                <label for="surname">Cognome del passeggero</label>
+                <input type="text" class="form-control" name="surname" id="surname">
+            </div>
+            <div class="col-md-6">
                 <label for="distance">Inserire i chilometri del tuo viaggio</label>
                 <input type="number" class="form-control" id="distance" placeholder="KM">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
-                    else.</small>
             </div>
-            <div class="form-group">
-                <label for="age">Inserire la facia di età del passeggero</label>
-                <select class="form-control" id="age" placeholder="Età del passeggero">
+            <div class="col-md-6">
+                <label for="age">Inserire la fascia di età del passeggero</label>
+                <select class="form-control" id="age">
                     <option value="17">Junior</option>
                     <option value="standard">Adulto</option>
                     <option value="65">Senior</option>
                 </select>
             </div>
-            <input type="submit" value="Accetta" btn btn-primary"></input>
+            <div class="col-md-12 my-3">
+                <input type="submit" value="Accetta" class="btn btn-primary">
+            </div>
         </form>
     </div>
+    <!-- Stampa del biglietto con le informazioni inserite dall'utente nel form e il prezzo finale del biglietto  -->
     <div class="container">
-        <p id="ticket">
+        <div class="row">
+            <div class="col-md-6">
+                <p id="firstname">
 
-        </p>
+                </p>
+            </div>
+            <div class="col-md-6">
+                <p id="lastname">
+
+                </p>
+            </div>
+            <div class="col-md-12">
+                <p id="price">
+
+                </p>
+            </div>
+            <div class="col-md-12">
+                <p id="message">
+
+                </p>
+            </div>
+        </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
     <script src="./script/script.js"></script>
 </body>
 
